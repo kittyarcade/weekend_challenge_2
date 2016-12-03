@@ -3,27 +3,29 @@ var people = [];
 var searchURL = 'http://devjana.net/support/tau_students.json';
 
 $(document).ready(function(){
-console.log('jQuery');
+  console.log('jQuery');
 
-
-
-//var getPeople = function(){
   //call to AJAX
   $.ajax({
     url: searchURL,
     dataType: 'JSON',
     success: function(data){
-      console.log('success, received:', data);
-      console.log('data.tau', data.tau);
-      console.log(data.tau[0]);
-      //for(var i = 0; i < data.tau.length; i++){
-        //  people.push(data.people[i]);
-      //}
-}
-});
-//};
+      for(var i = 0; i < data.tau.length; i++){
+         people.push(data.tau[i]);
 
+    }
+showPeople(data.tau);
+    }
 
+});//end ajax call
 
+var showPeople = function (){
+  var outputText = '';
+  for(var i = 0; i < people.length; i++){
+    outputText += '<p>' + people[i].first_name + ' ' + people[i].last_name + ' ' + '</p>';
+    outputText += '<p>' + people[i].info + '</p>';
+  }
+$('#outputDiv').html(outputText);
 
+};//end showPeople function
 });//end doc ready
