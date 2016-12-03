@@ -20,7 +20,7 @@
 
 [x] use AJAX to access JSON data
 
-[] get JSON data to display on DOM
+[x] get JSON data to display on DOM
 
 
 

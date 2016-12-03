@@ -16,16 +16,19 @@ $(document).ready(function(){
     }
 showPeople(data.tau);
     }
-
 });//end ajax call
 
+
+//display to DOM
 var showPeople = function (){
   var outputText = '';
   for(var i = 0; i < people.length; i++){
+    outputText += '<img src="' + people[i].picUrl + '">';
     outputText += '<p>' + people[i].first_name + ' ' + people[i].last_name + ' ' + '</p>';
     outputText += '<p>' + people[i].info + '</p>';
   }
 $('#outputDiv').html(outputText);
-
 };//end showPeople function
+
+
 });//end doc ready
