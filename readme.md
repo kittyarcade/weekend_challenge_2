@@ -6,7 +6,6 @@
 * JavaScript
 * JSON
 * AJAX
-* Bootstrap
 * CSS
 
 ##To-DO:
@@ -19,7 +18,9 @@
 
 [] next button
 
-[] use AJAX to access JSON data
+[x] use AJAX to access JSON data
+
+[] get JSON data to display on DOM
 
 
 
