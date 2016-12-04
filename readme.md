@@ -14,13 +14,15 @@
 
 [X] link everything!
 
-[] Prev button
+[X] Prev button
 
-[] next button
+[X] next button
 
 [x] use AJAX to access JSON data
 
 [x] get JSON data to display on DOM
+
+[x] get some style
 
 
 

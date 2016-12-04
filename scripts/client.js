@@ -40,8 +40,8 @@ if (i === 0) {
 
 //display to DOM
 var showPeople = function (){
-    var outputText = '<img src="' + people[i].picUrl + '">';
-    outputText += '<p>' + people[i].first_name + ' ' + people[i].last_name + ' ' + '</p>';
+    var outputText = '<img class=picture src="' + people[i].picUrl + '">';
+    outputText += '<p>' + '<strong>' + people[i].first_name + ' ' + people[i].last_name + '</strong>' + '</p>';
     outputText += '<p>' + people[i].info + '</p>';
     outputText += '<p>' + (i + 1) + '/' + people.length + '</p>';
     $('#outputDiv').html(outputText);
