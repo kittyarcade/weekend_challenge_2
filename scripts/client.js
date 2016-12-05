@@ -38,14 +38,20 @@ if (i === 0) {
   showPeople();
 });
 
-//dynamic buttons
+//dynamic buttons that won't work. blerg
 $( document ).on( 'click', '.DyButton', function(){
-    for(var i = 0; i< people.length; i++){
+  for(var i = 0; i< people.length; i++){
    var buttonName = $( this ).attr( 'name' );
  }
-  showPeople();
+ showButtons();
  });
 
+ var showButtons = function(){
+   for(var i = 0 ; i<people.length; i++){
+   outputText += '<button class="DyButton btn btn-default" name="' + people[i].first_name + '">' + people[i].first_name + '</button>';
+ }
+  $('#studentButtons').html(outputText);
+ };
 
 //display to DOM
 var showPeople = function (){
@@ -53,9 +59,9 @@ var showPeople = function (){
     outputText += '<p>' + '<strong>' + people[i].first_name + ' ' + people[i].last_name + '</strong>' + '</p>';
     outputText += '<p>' + people[i].info + '</p>';
     outputText += '<p>' + (i + 1) + '/' + people.length + '</p>';
-    outputText += '<button class="DyButton btn btn-default" name="' + people[i].first_name + '">' + people[i].first_name + '</button>';
     $('#outputDiv').html(outputText);
-
+    $('#outputDiv').hide();
+    $('#outputDiv').fadeIn('slow');
 
 };//end showPeople function
 
