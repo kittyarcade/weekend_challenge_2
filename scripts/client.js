@@ -16,8 +16,8 @@ $(document).ready(function(){
          people.push(data.tau[i]);
 
     }
+showButtons();
 showPeople(data.tau);
-
     }
 });//end ajax call
 
@@ -38,20 +38,28 @@ if (i === 0) {
   showPeople();
 });
 
-//dynamic buttons that won't work. blerg
+
+//dynamic buttons
 $( document ).on( 'click', '.DyButton', function(){
-  for(var i = 0; i< people.length; i++){
-   var buttonName = $( this ).attr( 'name' );
- }
- showButtons();
+  console.log('clicked');
+  var clickedName = $( this ).attr( 'name' );
+  for(var j = 0; j < people.length; j++){
+    if(people[j].first_name === clickedName){
+      i = j;
+    }
+  }
+  showPeople();
+console.log(clickedName);
  });
 
- var showButtons = function(){
+function showButtons(){
+  console.log('in showbuttons');
+  var outputText = '';
    for(var i = 0 ; i<people.length; i++){
    outputText += '<button class="DyButton btn btn-default" name="' + people[i].first_name + '">' + people[i].first_name + '</button>';
  }
   $('#studentButtons').html(outputText);
- };
+ }
 
 //display to DOM
 var showPeople = function (){
@@ -64,5 +72,6 @@ var showPeople = function (){
     $('#outputDiv').fadeIn('slow');
 
 };//end showPeople function
+
 
 });//end doc ready
