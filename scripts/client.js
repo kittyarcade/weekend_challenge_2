@@ -17,11 +17,12 @@ $(document).ready(function(){
 
     }
 showPeople(data.tau);
+
     }
 });//end ajax call
 
 
-//buttons
+//hard-coded buttons
 $(document).on('click', '#next', function(){
   i = i + 1;
   i = i % people.length;
@@ -37,6 +38,14 @@ if (i === 0) {
   showPeople();
 });
 
+//dynamic buttons
+$( document ).on( 'click', '.DyButton', function(){
+    for(var i = 0; i< people.length; i++){
+   var buttonName = $( this ).attr( 'name' );
+ }
+  showPeople();
+ });
+
 
 //display to DOM
 var showPeople = function (){
@@ -44,6 +53,7 @@ var showPeople = function (){
     outputText += '<p>' + '<strong>' + people[i].first_name + ' ' + people[i].last_name + '</strong>' + '</p>';
     outputText += '<p>' + people[i].info + '</p>';
     outputText += '<p>' + (i + 1) + '/' + people.length + '</p>';
+    outputText += '<button class="DyButton btn btn-default" name="' + people[i].first_name + '">' + people[i].first_name + '</button>';
     $('#outputDiv').html(outputText);
 
 
